@@ -1,24 +1,22 @@
 package br.com.neurotech.challenge.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name="clients")
 public class NeurotechClient {
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;	
+	@Column(name = "name", nullable = false)
+    @Size(max = 120)
 	private String name;
+	@Column(name = "age", nullable = false)
 	private Integer age;
+	@Column(name = "income", nullable = false)
 	private Double income;
 
 }
