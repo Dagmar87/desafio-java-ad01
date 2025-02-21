@@ -1,5 +1,16 @@
 package br.com.neurotech.challenge.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.neurotech.challenge.service.ClientService;
+
+@RestController
+@RequestMapping("/clients")
 public class ClientController {
+	
+	@Autowired
+	private ClientService clientService;
 
 }
